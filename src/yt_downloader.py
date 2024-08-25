@@ -1,4 +1,5 @@
 from yt_dlp import YoutubeDL
+from yt_dlp.utils import ExtractorError
 
 class Downloader():
     def __init__(self, opts, id):
@@ -6,7 +7,10 @@ class Downloader():
         updated_url = default_url + 'UUMO' + id[2:]
 
         with YoutubeDL(opts) as ydl:
-            ydl.download(updated_url)
+            try:
+                ydl.download(updated_url)
+            except ExtractorError: 
+                print("Boom success!!")
 
         
 
