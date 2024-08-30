@@ -3,15 +3,14 @@ from yt_dlp import DownloadError, YoutubeDL
 class Downloader():
     def __init__(self, opts, id):
         default_url = 'https://www.youtube.com/playlist?list='
-        updated_url = default_url + 'UUMO' + id[2:]
+        updated_url = default_url + 'UUMO' + id[2:] #Playlist for all membership videos for a channel
 
 
         with YoutubeDL(opts) as ydl:
             try:
                 ydl.download(updated_url)
             except DownloadError:
-                opts['cookiesfrombrowser'] = ('firefox', 'C:/Users/Ansh/AppData/Roaming/Mozilla/Firefox/Profiles/422oklgq.default-release') 
-                ydl.download(updated_url)
+                print("got the error")
 
 if __name__ == "__main__":
     opts = {
@@ -48,9 +47,6 @@ if __name__ == "__main__":
             'writesubtitles': True,  # Allow writing subtitles
             'writeautomaticsub': True,
             'allsubs': True,  # Download all subtitles
-
-            
-
             }
     id = 'UCfQgsKhHjSyRLOp9mnffqVg'
     Downloader(opts, id)
