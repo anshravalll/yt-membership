@@ -36,7 +36,7 @@
 2. **Run the Script**:
    Execute the script with the desired YouTube channel ID:
    ```bash
-   python your_script.py
+   python yt-membership.py
    ```
 
 3. **Example Configuration**:
