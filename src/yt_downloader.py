@@ -16,7 +16,7 @@ class Downloader():
 
 if __name__ == "__main__":
     opts = {
-            'cookiefile': r"C:\Users\Ansh\Desktop\coding\yt-membership\tests\cookies.txt",
+        #'cookiefile': r"C:\Users\Ansh\Desktop\coding\yt-membership\tests\cookies.txt",
             'cookiesfrombrowser': ('firefox', 'C:/Users/Ansh/AppData/Local/Packages/Mozilla.Firefox_n80bbvh6b1yt2/LocalCache/Roaming/Mozilla/Firefox/Profiles/422oklgq.default-release'),
 
             'outtmpl': {
