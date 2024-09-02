@@ -7,15 +7,18 @@ class Downloader():
 
 
         with YoutubeDL(opts) as ydl:
-            try:
-                ydl.download(updated_url)
-            except DownloadError:
-                print("got the error")
+            while True:
+                try:
+                    ydl.download(updated_url)
+                except DownloadError:
+                    pass
+
 
 if __name__ == "__main__":
     opts = {
-            'cookiesfrombrowser' : ('firefox', 'C:/Users/Ansh/AppData/Local/Packages/Mozilla.Firefox_n80bbvh6b1yt2/LocalCache/Local/Mozilla/Firefox/Profiles/422oklgq.default-release'),
-#'cookiefile': r"C:\Users\Ansh\Desktop\coding\yt-membership\tests\cookies.txt",
+            'cookiefile': r"C:\Users\Ansh\Desktop\coding\yt-membership\tests\cookies.txt",
+            'cookiesfrombrowser': ('firefox', 'C:/Users/Ansh/AppData/Local/Packages/Mozilla.Firefox_n80bbvh6b1yt2/LocalCache/Roaming/Mozilla/Firefox/Profiles/422oklgq.default-release'),
+
             'outtmpl': {
                 'default': 'D:/Youtube/%(channel)s/%(playlist)s/Videos/%(title)s.%(ext)s',  # Video files
                 'thumbnail': 'D:/Youtube/%(channel)s/%(playlist)s/Thumbnails/%(title)s.%(ext)s',  # Thumbnails
@@ -23,6 +26,7 @@ if __name__ == "__main__":
                 'description': 'D:/Youtube/%(channel)s/%(playlist)s/Description/%(title)s.%(ext)s',  # Description
                 'infojson': 'D:/Youtube/%(channel)s/%(playlist)s/InfoJSON/%(title)s.%(ext)s',  # Info JSON
 },
+            'verbose': True,
 
             'sleep_interval': 5,
             'max_sleep_interval': 30,
@@ -48,7 +52,7 @@ if __name__ == "__main__":
             'writeautomaticsub': True,
             'allsubs': True,  # Download all subtitles
             }
-    id = 'UCfQgsKhHjSyRLOp9mnffqVg'
+    id = 'UCfQgsKhHjSyRLOp9mnffqVg' #channel id
     Downloader(opts, id)
 
 
