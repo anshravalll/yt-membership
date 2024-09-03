@@ -2,22 +2,37 @@ from yt_dlp import DownloadError, YoutubeDL
 
 class Downloader():
     def __init__(self, opts, id):
+        url = self.default_url(id)
+        if opts.get('cookiefile', None) or opts.get('cookiesfrombrowser', None):
+            self.with_cookies(opts, url)
+        else:
+            self.plain_login(opts, url)
+
+    def plain_login(self, opts, url):
+        opts['username'] = input("Type your email:")
+        opts['password'] = input("Type your password:")
+        with YoutubeDL(opts) as ydl:
+            ydl.download(url)
+
+    def default_url(self, id):
         default_url = 'https://www.youtube.com/playlist?list='
         updated_url = default_url + 'UUMO' + id[2:] #Playlist for all membership videos for a channel
+        return updated_url
 
-
+    def with_cookies(self, opts, url):
         with YoutubeDL(opts) as ydl:
             while True:
                 try:
-                    ydl.download(updated_url)
+                    ydl.download(url)
                 except DownloadError:
                     pass
+
 
 
 if __name__ == "__main__":
     opts = {
         #'cookiefile': r"C:\Users\Ansh\Desktop\coding\yt-membership\tests\cookies.txt",
-            'cookiesfrombrowser': ('firefox', 'C:/Users/Ansh/AppData/Local/Packages/Mozilla.Firefox_n80bbvh6b1yt2/LocalCache/Roaming/Mozilla/Firefox/Profiles/422oklgq.default-release'),
+        #'cookiesfrombrowser': ('firefox', 'C:/Users/Ansh/AppData/Local/Packages/Mozilla.Firefox_n80bbvh6b1yt2/LocalCache/Roaming/Mozilla/Firefox/Profiles/422oklgq.default-release'),
 
             'outtmpl': {
                 'default': 'D:/Youtube/%(channel)s/%(playlist)s/Videos/%(title)s.%(ext)s',  # Video files

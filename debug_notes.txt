@@ -3,3 +3,7 @@ At line 4220, the cookies are loaded and this is the function that creates a dic
 self.cookiejar is the culprit for handling cookies
 
 cookies.py lineno 171 to 183 is important for HTTP cookie extracdtion details for firefox
+
+DownloadError is the type of error that we are looking for for any kind of issue coming while downloading
+
+Features: Without cookies login
