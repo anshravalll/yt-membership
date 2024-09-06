@@ -15,7 +15,7 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/yt-membership.git
+   git clone https://github.com/anshravalll/yt-membership.git
    cd yt-membership
    ```
 
