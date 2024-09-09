@@ -9,7 +9,7 @@
 - **Simultaneous Download**: Supports concurrent downloads of YouTube membership videos, including thumbnails, subtitles, and descriptions.
 - **Customizable Output**: Users can specify the output directory structure for videos, thumbnails, subtitles, descriptions, and JSON files.
 - **Error Handling**: Built-in error handling to manage download interruptions and retries.
-- **Flexible Integration**: Upload downloaded content to any specified location.
+- **Flexible Integration**: Upload content to video hosting services automatically.
 
 ## Installation
 
