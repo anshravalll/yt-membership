@@ -7,3 +7,5 @@ cookies.py lineno 171 to 183 is important for HTTP cookie extracdtion details fo
 DownloadError is the type of error that we are looking for for any kind of issue coming while downloading
 
 Features: Without cookies login
+
+adding telegram upload feature and with multithreaded facilities (current work)
