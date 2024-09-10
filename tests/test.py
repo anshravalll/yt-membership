@@ -6,7 +6,7 @@ class Uploader(ABC):
         pass
     
 class Telegram(Uploader):
-    def upload():
-        
+    def upload(self):
+      pass  
 
 
