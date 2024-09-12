@@ -9,3 +9,5 @@ DownloadError is the type of error that we are looking for for any kind of issue
 Features: Without cookies login
 
 adding telegram upload feature and with multithreaded facilities (current work)
+
+exploring threading right now
