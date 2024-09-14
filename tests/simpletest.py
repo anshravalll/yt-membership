@@ -1,15 +1,19 @@
 import threading
 import time
+import concurrent.futures
 
-def arra_operation(b):
-    a= b
+def arra_operation():
+    a= 5
     for i in range(5):
         a += 1
         time.sleep(1)
     print(a)
 
-threaddd = threading.Thread(target = arra_operation)
-threaddd.start()
-threaddd.join()
+with concurrent.futures.ThreadPoolExecutor(max_workers=2) as fufufu:
+    fufufu.submit(arra_operation)
+    
+
 print("hi")
+
+#world: shared resource access: 
 

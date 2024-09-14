@@ -1,4 +1,5 @@
 from yt_dlp import DownloadError, YoutubeDL
+from ..tests.test import Telegram
 
 class Downloader():
     def __init__(self, opts, id):
@@ -25,7 +26,7 @@ class Downloader():
                 try:
                     ydl.download(url)
                 except DownloadError:
-                    pass
+                    return
 
 
 if __name__ == "__main__":
@@ -68,6 +69,9 @@ if __name__ == "__main__":
             }
     id = 'UCfQgsKhHjSyRLOp9mnffqVg' #channel id
     Downloader(opts, id)
+    
+    telegram_upload = Telegram().upload()
+     
 
 
 
