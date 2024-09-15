@@ -1,5 +1,14 @@
+import threading
 from yt_dlp import DownloadError, YoutubeDL
-from ..tests.test import Telegram
+import sys
+from pathlib import Path
+import threading
+
+project_root = Path(__file__).resolve().parent.parent  # Go up two levels to project_root
+sys.path.insert(0, str(project_root))
+
+from tests.yt_test import Telegram
+
 
 class Downloader():
     def __init__(self, opts, id):
@@ -21,12 +30,13 @@ class Downloader():
         return updated_url
 
     def with_cookies(self, opts, url):
+        lock = threading.Lock()
         with YoutubeDL(opts) as ydl:
             while True:
-                try:
-                    ydl.download(url)
-                except DownloadError:
-                    return
+                    try:
+                        ydl.download(url)
+                    except DownloadError:
+                        return
 
 
 if __name__ == "__main__":
@@ -67,11 +77,16 @@ if __name__ == "__main__":
             'writeautomaticsub': True,
             'allsubs': True,  # Download all subtitles
             }
+
     id = 'UCfQgsKhHjSyRLOp9mnffqVg' #channel id
-    Downloader(opts, id)
-    
-    telegram_upload = Telegram().upload()
-     
+
+    #Downloader(opts, id)
+    telegram_upload = Telegram()
+
+    thread1 = threading.Thread(target = Downloader, args = (opts, id), daemon = True)
+    thread2 = threading.Thread(target = telegram_upload.upload, daemon= True)
+    thread1.start()
+    thread2.start()
 
 
 
