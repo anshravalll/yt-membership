@@ -30,14 +30,12 @@ class Downloader():
         return updated_url
 
     def with_cookies(self, opts, url):
-        lock = threading.Lock()
         with YoutubeDL(opts) as ydl:
             while True:
                     try:
                         ydl.download(url)
                     except DownloadError:
                         return
-
 
 if __name__ == "__main__":
     opts = {
@@ -83,10 +81,12 @@ if __name__ == "__main__":
     #Downloader(opts, id)
     telegram_upload = Telegram()
 
-    thread1 = threading.Thread(target = Downloader, args = (opts, id), daemon = True)
-    thread2 = threading.Thread(target = telegram_upload.upload, daemon= True)
+    thread1 = threading.Thread(target = Downloader, args = (opts, id)) 
+    thread2 = threading.Thread(target = telegram_upload.upload)
     thread1.start()
     thread2.start()
+    thread1.join()
+    thread2.join()
 
 
 

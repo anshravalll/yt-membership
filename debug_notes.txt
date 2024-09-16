@@ -10,4 +10,18 @@ Features: Without cookies login
 
 adding telegram upload feature and with multithreaded facilities (current work)
 
-exploring threading right now
+
+-----Telegram-----
+plan: Going to make a plugin system so that every platform can be available for uploading features
+
+  Entities:
+    1. Configuration manager: Handles Authentications and Authorizations
+
+    2. UI: For terminal interaction
+
+    3. BaseUploader: interface for every uploader class
+
+    4. Uploader: <Yet to figure out>
+
+    
+    
