@@ -23,5 +23,6 @@ plan: Going to make a plugin system so that every platform can be available for 
 
     4. Uploader: Managing everything here
 
+Add method to convert outtmpl file locations to acutal locations
     
     
