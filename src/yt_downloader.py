@@ -32,10 +32,14 @@ class Downloader():
     def with_cookies(self, opts, url):
         with YoutubeDL(opts) as ydl:
             while True:
-                    try:
-                        ydl.download(url)
-                    except DownloadError:
-                        return
+                try:
+                    ydl.download(url)
+                except DownloadError:
+                    return
+
+def progress_hook(d):
+    with open('progress_log.txt', 'a', encoding='utf-8') as file:
+        file.write(str(d) + '\n')  # Writing dictionary data as a string
 
 if __name__ == "__main__":
     opts = {
@@ -49,15 +53,14 @@ if __name__ == "__main__":
                 'description': 'D:/Youtube/%(channel)s/%(playlist)s/Description/%(title)s.%(ext)s',  # Description
                 'infojson': 'D:/Youtube/%(channel)s/%(playlist)s/InfoJSON/%(title)s.%(ext)s',  # Info JSON
 },
-            'verbose': True,
 
             'sleep_interval': 5,
             'max_sleep_interval': 30,
             'sleep_requests': 1,
 
             # Error Handling
-            #'ignoreerrors': True,
-            'noprogress': True,
+            'ignoreerrors': True,
+            #'noprogress': True,
 
             # File Handling
             'nopart': False,  # Start fresh, do not continue downloads
@@ -74,19 +77,34 @@ if __name__ == "__main__":
             'writesubtitles': True,  # Allow writing subtitles
             'writeautomaticsub': True,
             'allsubs': True,  # Download all subtitles
+
+            #Progress-hook
+            'progress_hooks': [progress_hook]
+            
             }
+
+    def outtmpl_to_path(output_tempelate): #Modifying metadata - yt-dlp documentation
+        pass
+
+            
+
+        
+
+
+    #outtmpl_to_path(opts['outtmpl'])
 
     id = 'UCfQgsKhHjSyRLOp9mnffqVg' #channel id
 
     #Downloader(opts, id)
-    telegram_upload = Telegram()
+    telegram_upload = Telegram().upload()
+    Downloader(opts, id)
 
-    thread1 = threading.Thread(target = Downloader, args = (opts, id)) 
-    thread2 = threading.Thread(target = telegram_upload.upload)
-    thread1.start()
-    thread2.start()
-    thread1.join()
-    thread2.join()
+    # thread1 = threading.Thread(target = Downloader, args = (opts, id)) 
+    # thread2 = threading.Thread(target = telegram_upload.upload)
+    # thread1.start()
+    # thread2.start()
+    # thread1.join()
+    # thread2.join()
 
 
-
+    

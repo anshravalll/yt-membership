@@ -21,7 +21,7 @@ plan: Going to make a plugin system so that every platform can be available for 
 
     3. BaseUploader: interface for every uploader class
 
-    4. Uploader: <Yet to figure out>
+    4. Uploader: Managing everything here
 
     
     
