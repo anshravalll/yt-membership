@@ -38,8 +38,8 @@ class Downloader():
                     return
 
 def progress_hook(d):
-    with open('progress_log.txt', 'a', encoding='utf-8') as file:
-        file.write(str(d) + '\n')  # Writing dictionary data as a string
+    if d['status'] == 'finished':
+        print(d['info_dict'].keys())
 
 if __name__ == "__main__":
     opts = {
