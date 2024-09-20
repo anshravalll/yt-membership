@@ -24,5 +24,11 @@ plan: Going to make a plugin system so that every platform can be available for 
     4. Uploader: Managing everything here like an application handler that has everything from ui to configuration
 
 Add method to convert outtmpl file locations to acutal locations
+
+
+
     
-    
+-------- Finding outtmpl values ---------
+
+- Going to check following keywords in youtubedl lib: outtmpl, facilities
+all the major definitions regarding these are just above these keywords
