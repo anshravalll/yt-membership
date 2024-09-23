@@ -4,9 +4,9 @@ self.cookiejar is the culprit for handling cookies
 
 cookies.py lineno 171 to 183 is important for HTTP cookie extracdtion details for firefox
 
-DownloadError is the type of error that we are looking for for any kind of issue coming while downloading
+DownloadError is the type of error that we are looking for for any kind of issue coming while downloading [Utilized]
 
-Features: Without cookies login
+Features: Without cookies login [Done]
 
 adding telegram upload feature and with multithreaded facilities (current work)
 
@@ -30,5 +30,5 @@ Add method to convert outtmpl file locations to acutal locations
     
 -------- Finding outtmpl values ---------
 
-Debugging --replace-in-metadata and --embed-metadata
-(not found it yet)
+Debugging --replace-in-metadata and --embed-metadata [not found it yet]
+
