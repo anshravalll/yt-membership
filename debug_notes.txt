@@ -35,4 +35,4 @@ subscription has been finished, begin by subscribing again.
 
 --------- Goal -----------
 
-Integrate it with gpt so that gpt/llms can directly use api for downloading desired content
+Integrate it with gpt so that gpt/llms can directly use api for downloading desired content.
