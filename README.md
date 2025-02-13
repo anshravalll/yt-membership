@@ -1,6 +1,6 @@
 # yt-membership
 
-**yt-membership** is a Python-based tool designed to simultaneously download and upload all member-exclusive videos from YouTube. This tool leverages the `yt-dlp` library to manage video downloads and supports various output configurations, including video files, thumbnails, subtitles, descriptions, and JSON information.
+**yt-membership** is a Python-based tool designed to simultaneously download and upload all member-exclusive videos from YouTube. This tool leverages the `yt-dlp` library to manage video downloads and supports various output configurations including video files, thumbnails, subtitles, descriptions, and JSON information.
 
 > **Note**: This tool is currently under development and may undergo significant changes.
 
