@@ -69,7 +69,6 @@
        'allsubs': True,
    }
    ```
-   ```
 
 ## Contribution
 
