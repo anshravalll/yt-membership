@@ -29,18 +29,19 @@
 
 1. **Set Up Your Configuration**:
    Update the `opts` dictionary in the script with your desired settings:
+   
    - **Cookie File**: Specify the path to your YouTube cookies file to access member-exclusive content.
    - **Output Templates**: Configure where to save downloaded videos, thumbnails, subtitles, descriptions, and JSON files in a strucutred manner.
    - **InfoJson**: Get the information about each and every metadata and portion of the video.
    - **Error Handling and Download Options**: Customize sleep intervals, error handling, and concurrent downloads.
 
-2. **Run the Script**:
+3. **Run the Script**:
    Execute the script with the desired YouTube channel ID:
    ```bash
    python yt-membership.py
    ```
 
-3. **Example Configuration**:
+4. **Example Configuration**:
    ```python
    opts = {
        'cookiefile': r"C:\Path\To\Your\cookies.txt",
