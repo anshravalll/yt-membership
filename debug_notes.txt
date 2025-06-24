@@ -25,7 +25,6 @@ plan: Going to make a plugin system so that every platform can be available for 
 
 Add method to convert outtmpl file locations to acutal locations
 
-    
 -------- Finding outtmpl values ---------
 
 Debugging --replace-in-metadata and --embed-metadata [not found it yet]
