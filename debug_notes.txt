@@ -27,7 +27,7 @@ Add method to convert outtmpl file locations to acutal locations
 
 -------- Finding outtmpl values ---------
 
-Debugging --replace-in-metadata and --embed-metadata [not found it yet]
+Debugging --replace-in-metadata and --embed-metadata [not found it yet.]
 
 
 subscription has been finished, begin by subscribing again.
