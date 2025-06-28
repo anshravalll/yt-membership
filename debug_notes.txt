@@ -30,8 +30,8 @@ Add method to convert outtmpl file locations to acutal locations
 Debugging --replace-in-metadata and --embed-metadata [not found it yet.]
 
 
-subscription has been finished, begin by subscribing again.
+subscription has been finished, begin by subscribing again
 
 --------- Goal -----------
 
-Integrate it with gpt so that gpt/llms can directly use api for downloading desired content.
+Integrate it with gpt so that gpt/llms can directly use api for downloading desired content
